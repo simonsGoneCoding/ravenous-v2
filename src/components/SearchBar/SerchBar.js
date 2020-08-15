@@ -19,7 +19,7 @@ class SearchBar extends Component {
     return (
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
-          <ul>{this.renderSortByOptions}</ul>
+          <ul>{this.renderSortByOptions()}</ul>
         </div>
 
         <div className="SearchBar-fields">
@@ -28,8 +28,7 @@ class SearchBar extends Component {
         </div>
 
         <div className="SearchBar-submit">
-          <button>Let's go</button>{" "}
-          {/*was <a> </a> with no href attribute instead of button...*/}
+          <a>Let's go</a>
         </div>
       </div>
     );
