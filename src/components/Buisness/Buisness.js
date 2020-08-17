@@ -13,6 +13,7 @@ class Buisness extends Component {
       rating,
       reviewCount,
     } = this.props.buisness;
+
     return (
       <div className="Business">
         <div className="image-container">
