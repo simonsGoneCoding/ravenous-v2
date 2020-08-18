@@ -7,8 +7,8 @@ class BuisnessList extends Component {
   render() {
     return (
       <div className="BusinessList">
-        {this.props.buisnesses.map((buisness, index) => (
-          <Buisness buisness={buisness} key={buisness.name + index} />
+        {this.props.buisnesses.map((buisness) => (
+          <Buisness buisness={buisness} key={buisness.id} />
         ))}
       </div>
     );

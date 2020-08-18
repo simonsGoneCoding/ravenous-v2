@@ -17,27 +17,11 @@ class SearchBar extends Component {
     };
   }
 
-  renderSortByOptions() {
-    return Object.keys(this.sortByOptions).map((option) => {
-      let optionValue = this.sortByOptions[option];
-      return (
-        <li
-          key={optionValue}
-          className={this.getSortByClass(option)}
-          onClick={this.handleSortByChange.bind(this, option)}
-        >
-          {option}
-        </li>
-      );
-    });
-  }
-
   getSortByClass(sortByOption) {
     if (this.state.sortBy === sortByOption) {
       return "active";
-    } else {
-      return "";
     }
+    return "";
   }
 
   handleSortByChange(sortByOption) {
@@ -57,6 +41,21 @@ class SearchBar extends Component {
     this.props.searchYelp(term, location, sortBy);
     e.preventDefault();
   };
+
+  renderSortByOptions() {
+    return Object.keys(this.sortByOptions).map((option) => {
+      let optionValue = this.sortByOptions[option];
+      return (
+        <li
+          key={optionValue}
+          className={this.getSortByClass(optionValue)}
+          onClick={() => this.handleSortByChange(optionValue)}
+        >
+          {option}
+        </li>
+      );
+    });
+  }
 
   render() {
     return (
